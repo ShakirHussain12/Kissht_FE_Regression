@@ -26,7 +26,7 @@ public class RingPayTestScripts{
 		ringPayBusiness = new com.business.RingPay.RingPayBusinessLogic("ring");
 	}
 	
-	/*@Test(priority = 0)
+	@Test(priority = 0)
 	@Parameters({"SignUpBtn","permission"})
     public void  User_Playstore_Flow(String SignUpBtn, String permission) throws Exception {
 		ringPayBusiness.User_Play_Store_Flow(SignUpBtn, permission);
@@ -36,7 +36,7 @@ public class RingPayTestScripts{
 	@Parameters({"Month","Date","Year","Gender"})
 	public void userRegistrationFlow(String month, String date, String year,String gender) throws Exception {
 		ringPayBusiness.User_Registration_Flow(month,date,year,gender);
-	}*/
+	}
 	
 	@Test(priority = 2)
 	public void promocodeFlow() throws Exception {
@@ -107,7 +107,7 @@ public class RingPayTestScripts{
 	}*/
 	
 	//================================================digi surrogate related POOL Offer test cases =======================================
-	/*@Test(priority=15)
+	@Test(priority=15)
 	public void ringPolicy_TC_1() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_01(prop.getproperty("pool_1_v16"));
 	}
@@ -363,7 +363,7 @@ public class RingPayTestScripts{
 	@Test(priority=69)
 	public void ringPolicy_TC_169() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_169(prop.getproperty("l3"), prop.getproperty("pool_1_v17"));
-	}*/
+	}
 	
 	/*@Test(priority=70)
 	public void ringPolicy_TC_120() throws Exception{

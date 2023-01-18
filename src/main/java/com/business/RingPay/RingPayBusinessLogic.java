@@ -931,7 +931,7 @@ try {
 	
 //============================================Offer Screen Merchant Flow=====================================================================================
 		public void merchantOfferPageValidation() throws Exception {
-			getDriver().resetApp();
+			//getDriver().resetApp();
 			waitTime(5000);
 			if (verifyElementPresent(RingLoginPage.objCamPermPopUp, "Enable permissions button")) {
 				enablePermissions();
