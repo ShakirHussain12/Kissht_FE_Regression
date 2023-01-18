@@ -199,10 +199,10 @@ public class RingPayTestScripts{
 	}
 	
 	//================================================age preference related POOL Offer test cases =======================================
-	/*@Test(priority = 33)
+	@Test(priority = 33)
 	public void ringPolicy_TC_158_digi() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_158_digi(prop.getproperty("age_digi"));
-	}*/
+	}
 	
 	/*@Test(priority = 34)
 	public void ringPolicy_TC_158_L1() throws Exception{
