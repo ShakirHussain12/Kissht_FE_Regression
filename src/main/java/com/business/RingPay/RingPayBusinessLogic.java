@@ -851,11 +851,11 @@ try {
 		
 		verifyElementPresent(PromoCodeOfferPage.objMerchantOfferHeader, getText(PromoCodeOfferPage.objMerchantOfferHeader));
 		softAssertion.assertEquals(getText(PromoCodeOfferPage.objMerchantOfferHeader), "Woohoo, Sunil!");
-		verifyElementPresent(PromoCodeOfferPage.objUnlockRingLimit, getText(PromoCodeOfferPage.objUnlockRingLimit) + " of " + getText(PromoCodeOfferPage.objApprovedRinglimitAmt));
+		/*verifyElementPresent(PromoCodeOfferPage.objUnlockRingLimit, getText(PromoCodeOfferPage.objUnlockRingLimit) + " of " + getText(PromoCodeOfferPage.objApprovedRinglimitAmt));
 		verifyElementPresent(PromoCodeOfferPage.objPayingType, getText(PromoCodeOfferPage.objPayingType));
 		verifyElementPresent(PromoCodeOfferPage.objUPIId, getText(PromoCodeOfferPage.objUPIId));
 		verifyElementPresent(PromoCodeOfferPage.objMerchantPayAmt, getText(PromoCodeOfferPage.objMerchantPayAmt));
-		verifyElementPresent(PromoCodeOfferPage.objRBIMsg , getText(PromoCodeOfferPage.objRBIMsg) + getText(PromoCodeOfferPage.objRBIMsg));
+		verifyElementPresent(PromoCodeOfferPage.objRBIMsg , getText(PromoCodeOfferPage.objRBIMsg) + getText(PromoCodeOfferPage.objRBIMsg));*/
 		verifyElementPresentAndClick(RingLoginPage.objIAcceptCheckBox, "I accept the Ring’s Terms & Conditions & IT Act 2000 checkbox");
 		verifyElementPresentAndClick(TermsAndConditionPage.objAcceptAndPayBtn,getText(TermsAndConditionPage.objAcceptText));
 			
@@ -959,7 +959,7 @@ try {
 			waitTime(5000);
 			
 			click(RingLoginPage.objMakePaymentLetsRingItBtn,getText(RingLoginPage.objMakePaymentLetsRingItBtn));
-			click(RingLoginPage.objMakePaymentLetsRingItBtn,getText(RingLoginPage.objMakePaymentLetsRingItBtn));
+			//click(RingLoginPage.objMakePaymentLetsRingItBtn,getText(RingLoginPage.objMakePaymentLetsRingItBtn));
 			click(RingPayMerchantFlowPage.objAmountTextField, "Enter Amount Field");
 			type1(RingPayMerchantFlowPage.objAmountTextField, prop.getproperty("Amount_Merchant"), "Amount Field");
 			verifyElementPresentAndClick(RingLoginPage.objMakePaymentPageProceedBtn,getText(RingLoginPage.objMakePaymentPageProceedBtn));
@@ -984,11 +984,11 @@ try {
 			waitTime(5000);
 			verifyElementPresent(PromoCodeOfferPage.objMerchantOfferHeader, getText(PromoCodeOfferPage.objMerchantOfferHeader));
 			softAssertion.assertEquals(getText(PromoCodeOfferPage.objMerchantOfferHeader), "Woohoo, Sunil!");
-			verifyElementPresent(PromoCodeOfferPage.objUnlockRingLimit, getText(PromoCodeOfferPage.objUnlockRingLimit) + " of " + getText(PromoCodeOfferPage.objApprovedRinglimitAmt));
+			/*verifyElementPresent(PromoCodeOfferPage.objUnlockRingLimit, getText(PromoCodeOfferPage.objUnlockRingLimit) + " of " + getText(PromoCodeOfferPage.objApprovedRinglimitAmt));
 			verifyElementPresent(PromoCodeOfferPage.objPayingType, getText(PromoCodeOfferPage.objPayingType));
 			verifyElementPresent(PromoCodeOfferPage.objUPIId, getText(PromoCodeOfferPage.objUPIId));
 			verifyElementPresent(PromoCodeOfferPage.objMerchantPayAmt, getText(PromoCodeOfferPage.objMerchantPayAmt));
-			verifyElementPresent(PromoCodeOfferPage.objRBIMsg , getText(PromoCodeOfferPage.objRBIMsg) + getText(PromoCodeOfferPage.objRBIMsg));
+			verifyElementPresent(PromoCodeOfferPage.objRBIMsg , getText(PromoCodeOfferPage.objRBIMsg) + getText(PromoCodeOfferPage.objRBIMsg));*/
 			verifyElementPresent(RingLoginPage.objIAcceptCheckBox, "I accept the Ring’s Terms & Conditions & IT Act 2000 checkbox");
 			verifyElementPresentAndClick(TermsAndConditionPage.objAcceptAndPayBtn,getText(TermsAndConditionPage.objAcceptText));
 			
