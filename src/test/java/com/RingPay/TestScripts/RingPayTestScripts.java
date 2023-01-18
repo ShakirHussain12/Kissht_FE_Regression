@@ -37,12 +37,13 @@ public class RingPayTestScripts{
 	public void userRegistrationFlow(String month, String date, String year,String gender) throws Exception {
 		ringPayBusiness.User_Registration_Flow(month,date,year,gender);
 	}*/
+	
 	@Test(priority = 2)
 	public void promocodeFlow() throws Exception {
 		ringPayBusiness.promoCodeFlowModule();
 	}
 	
-	/*@Test(priority=3)
+	@Test(priority=3)
 	public void offerFlow() throws Exception {
 		ringPayBusiness.offerScreenModule();
 	}
@@ -50,7 +51,7 @@ public class RingPayTestScripts{
 	@Test(priority=4)
 	public void ageCheck() throws Exception {
 		ringPayBusiness.ageCriteriaFailedCheck();
-	}*/
+	}
 	
 	/*@Test(priority = 5)
     @Parameters({"baseURLMockUser","gender","encrypted_name","portalEmail","portalPassword","portalOTP"})
@@ -103,10 +104,10 @@ public class RingPayTestScripts{
 	@Test(priority = 14)
 	public void ringInstaWhitelist() throws Exception{
 		ringPayBusiness.instaLoanWhitelistLogic();
-	}
+	}*/
 	
 	//================================================digi surrogate related POOL Offer test cases =======================================
-	@Test(priority=15)
+	/*@Test(priority=15)
 	public void ringPolicy_TC_1() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_01(prop.getproperty("pool_1_v16"));
 	}
@@ -207,50 +208,50 @@ public class RingPayTestScripts{
 	@Test(priority = 34)
 	public void ringPolicy_TC_158_L1() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_158_L1(prop.getproperty("age_digi"),prop.getproperty("l1"));
-	}*/
+	}
 	
-	/*@Test(priority = 35)
+	@Test(priority = 35)
 	public void ringPolicy_TC_159_BC1() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_158_L1(prop.getproperty("age_digi"),prop.getproperty("bc1"));
-	}*/
+	}
 	
-	/*@Test(priority=36)
+	@Test(priority=36)
 	public void ringPolicy_TC_160() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_160(prop.getproperty("pool_1_v17"));
-	}*/
+	}
 	
-	/*@Test(priority=37)
+	@Test(priority=37)
 	public void ringPolicy_TC_62() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_62(prop.getproperty("pool_1_v17"));
-	}*/
+	}
 	
-	/*@Test(priority=37)
+	@Test(priority=37)
 	public void ringPolicy_TC_63() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_63(prop.getproperty("pool_1_v17"));
-	}*/
-	/*@Test(priority=37)
+	}
+	@Test(priority=37)
 	public void ringPolicy_TC_64() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_64(prop.getproperty("pool_1_v17"));
-	}*/
+	}
 	
-	/*@Test(priority=38)
+	@Test(priority=38)
 	public void ringPolicy_TC_65() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_65(prop.getproperty("pool_1_v17"));
-	}*/
+	}
 	
-	/*@Test(priority=39)
+	@Test(priority=39)
 	@Parameters({"baseURLMockUser","gender","encrypted_name"})
 	public void ringPolicy_TC_70(String url, String gender, String encryptedName) throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_70(url, gender, encryptedName);
-	}*/
+	}
 	
-	/*@Test(priority=40)
+	@Test(priority=40)
 	@Parameters({"baseURLMockUser","gender","encrypted_name"})
 	public void ringPolicy_TC_74(String url, String gender, String encryptedName) throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_74(url, gender, encryptedName);
-	}*/
+	}
 	
-	/*@Test(priority=41)
+	@Test(priority=41)
 	public void ringPolicy_TC_170() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_170(prop.getproperty("kla"),prop.getproperty("cc_flag_negative"),prop.getproperty("kla_flag_positive"));
 	}
@@ -258,14 +259,14 @@ public class RingPayTestScripts{
 	@Test(priority=42)
 	public void ringPolicy_TC_171() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_171(prop.getproperty("pool_1_v17"),prop.getproperty("cc_flag_negative"),prop.getproperty("kla_flag_positive"));
-	}*/
+	}
 	
-	/*@Test(priority=43)
+	@Test(priority=43)
 	public void ringPolicy_TC_172() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_172(prop.getproperty("kla"),prop.getproperty("cc_flag_positive"),prop.getproperty("kla_flag_negative"));
-	}*/
+	}
 	
-	/*@Test(priority=44)
+	@Test(priority=44)
 	public void ringPolicy_TC_173() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_173(prop.getproperty("pool_1_v17"),prop.getproperty("cc_flag_positive"),prop.getproperty("kla_flag_negative"));
 	}
@@ -273,93 +274,93 @@ public class RingPayTestScripts{
 	@Test(priority=45)
 	public void ringPolicy_TC_174() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_174(prop.getproperty("kla"),prop.getproperty("cc_flag_positive"),prop.getproperty("kla_flag_positive"));
-	}*/
+	}
 	
-	/*@Test(priority=46)
+	@Test(priority=46)
 	public void ringPolicy_TC_165() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_165(prop.getproperty("band_6_7"),prop.getproperty("l1"), prop.getproperty("cc_flag_positive"),prop.getproperty("kla_flag_negative"));
-	}*/
+	}
 	
-	/*@Test(priority=47)
+	@Test(priority=47)
 	public void ringPolicy_TC_166() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_166(prop.getproperty("band_6_7"),prop.getproperty("bc1"), prop.getproperty("cc_flag_positive"),prop.getproperty("kla_flag_negative"));
-	}*/
+	}
 	
-	/*@Test(priority=48)
+	@Test(priority=48)
 	public void ringPolicy_TC_131() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_131(prop.getproperty("band_9_20"), prop.getproperty("ltbc1"), prop.getproperty("cc_flag_negative"),prop.getproperty("kla_flag_negative"));
-	}*/
+	}
 	
-	/*@Test(priority=54)
+	@Test(priority=54)
 	public void ringPolicy_TC_99() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_99(prop.getproperty("l3_band_no_offer"), prop.getproperty("no_offer"));
-	}*/
+	}
 	
-	/*@Test(priority=56)
+	@Test(priority=56)
 	public void ringPolicy_TC_103() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_103(prop.getproperty("bc1"));
-	}*/
+	}
 	
-	/*@Test(priority=57)
+	@Test(priority=57)
 	public void ringPolicy_TC_105() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_105(prop.getproperty("firstBand"), prop.getproperty("l2"));
 	}
 	@Test(priority=58)
 	public void ringPolicy_TC_106() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_106(prop.getproperty("lastBand"), prop.getproperty("bc1"));
-	}*/
+	}
 	
-	/*@Test(priority=59)
+	@Test(priority=59)
 	public void ringPolicy_TC_107() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_107(prop.getproperty("lastBand"));
-	}*/
+	}
 	
-	/*@Test(priority=60)
+	@Test(priority=60)
 	public void ringPolicy_TC_40() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_40(prop.getproperty("pool_1_v17"));
-	}*/
+	}
 	
-	/*@Test(priority=61)
+	@Test(priority=61)
 	public void ringPolicy_TC_41() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_41(prop.getproperty("pool_1_v17"));
-	}*/
+	}
 	
-	/*@Test(priority=62)
+	@Test(priority=62)
 	public void ringPolicy_TC_42() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_42(prop.getproperty("pool_1_v17"));
-	}*/
+	}
 	
-	/*@Test(priority=63)
+	@Test(priority=63)
 	public void ringPolicy_TC_43() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_43(prop.getproperty("pool_1_v17"));
-	}*/
+	}
 	
-	/*@Test(priority=64)
+	@Test(priority=64)
 	public void ringPolicy_TC_44() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_44(prop.getproperty("pool_1_v17"));
-	}*/
+	}
 	
-	/*@Test(priority=65)
+	@Test(priority=65)
 	public void ringPolicy_TC_45() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_45(prop.getproperty("pool_1_v17"));
-	}*/
+	}
 	
-	/*@Test(priority=66)
+	@Test(priority=66)
 	public void ringPolicy_TC_46() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_46(prop.getproperty("pool_1_v17"));
-	}*/
+	}
 	
-	/*@Test(priority=67)
+	@Test(priority=67)
 	public void ringPolicy_TC_167() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_167(prop.getproperty("ltbc1"),prop.getproperty("band_18_greater"));
-	}*/
+	}
 	
-	/*@Test(priority=68)
+	@Test(priority=68)
 	public void ringPolicy_TC_168() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_168(prop.getproperty("l1"), prop.getproperty("band_18_greater"));
-	}*/
+	}
 	
-	/*@Test(priority=69)
+	@Test(priority=69)
 	public void ringPolicy_TC_169() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_169(prop.getproperty("l3"), prop.getproperty("pool_1_v17"));
 	}*/
