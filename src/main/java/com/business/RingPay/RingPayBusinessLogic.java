@@ -847,7 +847,7 @@ try {
 		dateOfBirth("Feb", "10", "1996");
 		Aclick(UserRegistrationNew.objProceed, "Proceed Button");
 		waitTime(10000);
-		instaNewCommunicationAddress();
+		addAddress("12","asaaw","saass","ddj","560102");
 		
 		verifyElementPresent(PromoCodeOfferPage.objMerchantOfferHeader, getText(PromoCodeOfferPage.objMerchantOfferHeader));
 		softAssertion.assertEquals(getText(PromoCodeOfferPage.objMerchantOfferHeader), "Woohoo, Sunil!");
@@ -979,7 +979,8 @@ try {
 			userDetails();
 			dateOfBirth("Feb", "10", "1996");
 			verifyElementPresentAndClick(RingUserDetailPage.objRegisterBtn, "Proceed Button");
-			instaNewCommunicationAddress();
+			//instaNewCommunicationAddress();
+			addAddress("12","asaaw","saass","ddj","560102");
 			waitTime(5000);
 			verifyElementPresent(PromoCodeOfferPage.objMerchantOfferHeader, getText(PromoCodeOfferPage.objMerchantOfferHeader));
 			softAssertion.assertEquals(getText(PromoCodeOfferPage.objMerchantOfferHeader), "Woohoo, Sunil!");
@@ -1085,7 +1086,8 @@ try {
 		userDetails();
 		dateOfBirth("Feb", "10", "1996");
 		verifyElementPresentAndClick(RingUserDetailPage.objRegisterBtn, "Proceed Button");
-		instaNewCommunicationAddress();
+		//instaNewCommunicationAddress();
+		addAddress("12","asaaw","saass","ddj","560102");
 		waitTime(5000);
 		
 		verifyElementPresent(RingLoginPage.objCongratsPage, getText(RingLoginPage.objCongratsPage));
@@ -1172,7 +1174,7 @@ try {
 
 	public void userDetails() throws Exception {
 		//extent.HeaderChildNode("Age Criteria");
-
+		waitTime(4000);
 		explicitWaitVisibility(RingUserDetailPage.objFirstName, 30);
 		click(RingUserDetailPage.objFirstName, "First Name Field");
 		type(RingUserDetailPage.objFirstName, "Sunil", "First Name field");
@@ -1255,7 +1257,8 @@ try {
 
 		} else if (age >= 18 || age <= 55) {
 			waitTime(10000);
-			instaNewCommunicationAddress();
+			//instaNewCommunicationAddress();
+			addAddress("12","asaaw","saass","ddj","560102");
 			logger.info("The present age is >=18 & <=55 and therefor the age is: " + age);
 			extent.extentLogger("age", "The present age is >=18 & <=55 and therefor the age is: " + age);
 			logger.info("Age Criteria Passed");
@@ -2101,7 +2104,8 @@ try {
 		userDetails();
 		dateOfBirth("Feb", "10", "1996");
 		verifyElementPresentAndClick(RingUserDetailPage.objRegisterBtn, "Proceed Button");
-		instaNewCommunicationAddress();
+		//instaNewCommunicationAddress();
+		addAddress("12","asaaw","saass","ddj","560102");
 		waitTime(5000);
 	
 		verifyElementPresent(RingLoginPage.objCongratsPage, getText(RingLoginPage.objCongratsPage));
@@ -2508,7 +2512,8 @@ try {
 		dateOfBirth("Feb", "10", "1996");
 		Aclick(UserRegistrationNew.objProceed, "Proceed Button");
 		waitTime(10000);
-		instaNewCommunicationAddress();
+		//instaNewCommunicationAddress();
+		addAddress("12","asaaw","saass","ddj","560102");
 		waitTime(5000);
 		instaLoancongratsScreen();
 		instaLoanSetPin(prop.getproperty("NewMPIN"),prop.getproperty("NewMPIN"));
@@ -2633,7 +2638,7 @@ try {
 		verifyElementPresent(RingPayMerchantFlowPage.objContinueWithGoogleCTA,getTextVal(RingPayMerchantFlowPage.objContinueWithGoogleCTA, "CTA"));
 		verifyElementPresent(RingPayMerchantFlowPage.objContinueWithFacebookCTA,getTextVal(RingPayMerchantFlowPage.objContinueWithFacebookCTA, "CTA"));
 		loginMobile();
-		mobileNoValidation1(RandomIntegerGenerator(10));
+		mobileNoValidation1("7" + RandomIntegerGenerator(9));
 		enterOtp(prop.getproperty("OTP"));
 		readAndAccept();
 		waitTime(60000);

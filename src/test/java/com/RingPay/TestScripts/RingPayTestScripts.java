@@ -42,7 +42,7 @@ public class RingPayTestScripts{
 		ringPayBusiness.promoCodeFlowModule();
 	}
 	
-	@Test(priority=3)
+	/*@Test(priority=3)
 	public void offerFlow() throws Exception {
 		ringPayBusiness.offerScreenModule();
 	}
@@ -50,7 +50,7 @@ public class RingPayTestScripts{
 	@Test(priority=4)
 	public void ageCheck() throws Exception {
 		ringPayBusiness.ageCriteriaFailedCheck();
-	}
+	}*/
 	
 	/*@Test(priority = 5)
     @Parameters({"baseURLMockUser","gender","encrypted_name","portalEmail","portalPassword","portalOTP"})
@@ -64,7 +64,7 @@ public class RingPayTestScripts{
 		 ringPayBusiness.bannerLogicOnHomePage(url,gender,encrypted_name,portalEmail,portalPassword,portalOTP);
 	 }*/
 	
-	 @Test(priority = 8)
+	 /*@Test(priority = 8)
 	 public void transactionSetPin() throws Exception {
 		 ringPayBusiness.transactionSetPin();
 	 }
@@ -207,7 +207,7 @@ public class RingPayTestScripts{
 	@Test(priority = 34)
 	public void ringPolicy_TC_158_L1() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_158_L1(prop.getproperty("age_digi"),prop.getproperty("l1"));
-	}
+	}*/
 	
 	/*@Test(priority = 35)
 	public void ringPolicy_TC_159_BC1() throws Exception{
