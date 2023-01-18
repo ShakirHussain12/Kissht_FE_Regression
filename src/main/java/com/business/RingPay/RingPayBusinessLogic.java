@@ -174,7 +174,7 @@ try {
 				waitTime(4000);
 				verifyElementPresent(RingLoginPage.objMakePaymentLetsRingItBtn, "Make Payment page");
 				click(RingLoginPage.objMakePaymentLetsRingItBtn,getText(RingLoginPage.objMakePaymentLetsRingItBtn));
-				click(RingLoginPage.objMakePaymentLetsRingItBtn,getText(RingLoginPage.objMakePaymentLetsRingItBtn));
+				//click(RingLoginPage.objMakePaymentLetsRingItBtn,getText(RingLoginPage.objMakePaymentLetsRingItBtn));
 				click(RingPayMerchantFlowPage.objAmountTextField, "Enter Amount Field");
 				type1(RingPayMerchantFlowPage.objAmountTextField, prop.getproperty("Amount_Merchant"), "Amount Field");
 				verifyElementPresentAndClick(RingLoginPage.objMakePaymentPageProceedBtn,getText(RingLoginPage.objMakePaymentPageProceedBtn));
