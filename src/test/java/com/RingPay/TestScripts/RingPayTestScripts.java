@@ -204,10 +204,10 @@ public class RingPayTestScripts{
 		ringPayBusiness.TC_Ring_Customer_Seg_158_digi(prop.getproperty("age_digi"));
 	}
 	
-	/*@Test(priority = 34)
+	@Test(priority = 34)
 	public void ringPolicy_TC_158_L1() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_158_L1(prop.getproperty("age_digi"),prop.getproperty("l1"));
-	}*/
+	}
 	
 	/*@Test(priority = 35)
 	public void ringPolicy_TC_159_BC1() throws Exception{
