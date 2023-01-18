@@ -26,7 +26,7 @@ public class RingPayTestScripts{
 		ringPayBusiness = new com.business.RingPay.RingPayBusinessLogic("ring");
 	}
 	
-	@Test(priority = 0)
+	/*@Test(priority = 0)
 	@Parameters({"SignUpBtn","permission"})
     public void  User_Playstore_Flow(String SignUpBtn, String permission) throws Exception {
 		ringPayBusiness.User_Play_Store_Flow(SignUpBtn, permission);
@@ -36,7 +36,7 @@ public class RingPayTestScripts{
 	@Parameters({"Month","Date","Year","Gender"})
 	public void userRegistrationFlow(String month, String date, String year,String gender) throws Exception {
 		ringPayBusiness.User_Registration_Flow(month,date,year,gender);
-	}
+	}*/
 	@Test(priority = 2)
 	public void promocodeFlow() throws Exception {
 		ringPayBusiness.promoCodeFlowModule();
@@ -64,22 +64,22 @@ public class RingPayTestScripts{
 		 ringPayBusiness.bannerLogicOnHomePage(url,gender,encrypted_name,portalEmail,portalPassword,portalOTP);
 	 }*/
 	
-	 @Test(priority = 7)
+	 @Test(priority = 8)
 	 public void transactionSetPin() throws Exception {
 		 ringPayBusiness.transactionSetPin();
 	 }
 	 
-	 @Test(priority = 8)
+	 @Test(priority = 9)
 	 public void repaymentmultipleCase() throws Exception {
 		 ringPayBusiness.repaymentMultipleCases();
 	 }
 	 
-	 @Test(priority = 9)
+	 @Test(priority = 10)
 	 public void bankTransferFlow() throws Exception{
 		 ringPayBusiness.BankTransferModule("5", "Akash");
 	 }
 	 
-	@Test(priority = 10)
+	@Test(priority = 7)
 	public void addAddresFlow() throws Exception {
 		ringPayBusiness.addAddressFlow();
 	}

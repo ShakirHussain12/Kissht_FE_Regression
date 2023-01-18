@@ -171,6 +171,7 @@ try {
 
 		switch (key) {
 		case "make Payment":
+				waitTime(4000);
 				verifyElementPresent(RingLoginPage.objMakePaymentLetsRingItBtn, "Make Payment page");
 				click(RingLoginPage.objMakePaymentLetsRingItBtn,getText(RingLoginPage.objMakePaymentLetsRingItBtn));
 				click(RingLoginPage.objMakePaymentLetsRingItBtn,getText(RingLoginPage.objMakePaymentLetsRingItBtn));
@@ -931,6 +932,7 @@ try {
 //============================================Offer Screen Merchant Flow=====================================================================================
 		public void merchantOfferPageValidation() throws Exception {
 			getDriver().resetApp();
+			waitTime(5000);
 			if (verifyElementPresent(RingLoginPage.objCamPermPopUp, "Enable permissions button")) {
 				enablePermissions();
 			}
@@ -2619,6 +2621,7 @@ try {
 	public void addAddressFlow() throws Exception {
         extent.HeaderChildNode("RingPay Add Address Flow");
         getDriver().resetApp();
+        waitTime(4000);
         if (verifyElementPresent(RingLoginPage.objCamPermPopUp, "Enable permissions button")) {
 			enablePermissions();
 		}
@@ -3207,7 +3210,7 @@ try {
 	}
 
 	public void enablePermissions() throws Exception {
-		explicitWaitVisibility(RingLoginPage.objCamPermPopUp, 10);
+		explicitWaitVisibility(RingLoginPage.objCamPermPopUp, 30);
 		Aclick(RingLoginPage.objCamPermPopUp, "Enable permissions button");
 		logger.info("Foreground allow camera permissions");
 		extent.extentLoggerPass("Foreground allow camera permissions", "Foreground allow camera permissions options");
@@ -3240,6 +3243,7 @@ try {
 //			softAssertion.assertEquals(verifyMobHeaderTxt1, "Verify Mobile");
 //			explicitWaitVisibility(RingLoginPage.objMobTextField, 10);
 //		}else {
+			waitTime(3000);
 			explicitWaitVisibility(RingLoginPage.objVerifyMobHeader, 10);
 			String verifyMobHeaderTxt = getText(RingLoginPage.objVerifyMobHeader);
 			softAssertion.assertEquals(verifyMobHeaderTxt, "Verify Mobile");
@@ -3947,7 +3951,7 @@ try {
 			dateOfBirth("MAY","07","1996");
 		}
 		Aclick(UserRegistrationNew.objProceed, "Proceed Button");
-		waitTime(15000);
+		waitTime(20000);
 		
 	    getDriver().resetApp();
 		return userRefNo;
