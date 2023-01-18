@@ -26,7 +26,7 @@ public class RingPayTestScripts{
 		ringPayBusiness = new com.business.RingPay.RingPayBusinessLogic("ring");
 	}
 	
-	/*@Test(priority = 0)
+	@Test(priority = 0)
 	@Parameters({"SignUpBtn","permission"})
     public void  User_Playstore_Flow(String SignUpBtn, String permission) throws Exception {
 		ringPayBusiness.User_Play_Store_Flow(SignUpBtn, permission);
@@ -50,7 +50,7 @@ public class RingPayTestScripts{
 	@Test(priority=4)
 	public void ageCheck() throws Exception {
 		ringPayBusiness.ageCriteriaFailedCheck();
-	}*/
+	}
 	
 	/*@Test(priority = 5)
     @Parameters({"baseURLMockUser","gender","encrypted_name","portalEmail","portalPassword","portalOTP"})
@@ -64,7 +64,7 @@ public class RingPayTestScripts{
 		 ringPayBusiness.bannerLogicOnHomePage(url,gender,encrypted_name,portalEmail,portalPassword,portalOTP);
 	 }*/
 	
-	/* @Test(priority = 7)
+	 @Test(priority = 7)
 	 public void transactionSetPin() throws Exception {
 		 ringPayBusiness.transactionSetPin();
 	 }
@@ -196,7 +196,7 @@ public class RingPayTestScripts{
 	@Test(priority = 32)
 	public void ringPolicy_TC_33() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_33(prop.getproperty("l3"),prop.getproperty("pool_2_v17_greater"));
-	}*/
+	}
 	
 	//================================================age preference related POOL Offer test cases =======================================
 	/*@Test(priority = 33)
@@ -389,10 +389,10 @@ public class RingPayTestScripts{
 		ringPayBusiness.TC_Ring_Customer_Seg_151();
 	}*/
 	
-	@Test(priority=74)
+	/*@Test(priority=74)
 	public void ringPolicy_TC_141() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_141();
-	}
+	}*/
 	/*@AfterTest
 	public void ringAppQuit() throws Exception{
 		ringPayBusiness.TearDown();
