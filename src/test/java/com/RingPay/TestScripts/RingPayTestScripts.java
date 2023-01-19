@@ -99,7 +99,7 @@ public class RingPayTestScripts{
 	@Test(priority = 13)
 	public void ringPayLogin() throws Exception {
 		ringPayBusiness.mockUserAPI();
-	}
+	}//hello
 	
 	@Test(priority = 14)
 	public void ringInstaWhitelist() throws Exception{
