@@ -65,7 +65,7 @@ public class RingPayTestScripts{
 		 ringPayBusiness.bannerLogicOnHomePage(url,gender,encrypted_name,portalEmail,portalPassword,portalOTP);
 	 }*/
 	
-	 /*@Test(priority = 8)
+	 @Test(priority = 8)
 	 public void transactionSetPin() throws Exception {
 		 ringPayBusiness.transactionSetPin();
 	 }
@@ -104,7 +104,8 @@ public class RingPayTestScripts{
 	@Test(priority = 14)
 	public void ringInstaWhitelist() throws Exception{
 		ringPayBusiness.instaLoanWhitelistLogic();
-	}*/
+	}
+	
 	
 	//================================================digi surrogate related POOL Offer test cases =======================================
 	@Test(priority=15)
@@ -365,25 +366,25 @@ public class RingPayTestScripts{
 		ringPayBusiness.TC_Ring_Customer_Seg_169(prop.getproperty("l3"), prop.getproperty("pool_1_v17"));
 	}
 	
-	/*@Test(priority=70)
+	@Test(priority=70)
 	public void ringPolicy_TC_120() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_120(prop.getproperty("payAmount"),null);
-	}*/
+	}
 	
-	/*@Test(priority=71)
+	@Test(priority=71)
 	public void ringPolicy_TC_121() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_121(prop.getproperty("payAmount"));
-	}*/
+	}
 	
-	/*@Test(priority=72)
+	@Test(priority=72)
 	public void ringPolicy_TC_125() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_125();
-	}*/
+	}
 	
-	/*@Test(priority=72)
+	@Test(priority=72)
 	public void ringPolicy_TC_126() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_126();
-	}*/
+	}
 	
 	/*@Test(priority=73)
 	public void ringPolicy_TC_151() throws Exception{
@@ -394,8 +395,28 @@ public class RingPayTestScripts{
 	public void ringPolicy_TC_141() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_141();
 	}*/
-	/*@AfterTest
+	
+	@Test(priority = 73)
+	public void instaOptionalJourney() throws Exception{
+		ringPayBusiness.instaLoanWhitelistLogic();	
+	}
+	
+	@Test(priority = 74)
+	public void instaMandatoryJourney() throws Exception{
+		ringPayBusiness.instaLoanWhitelistLogic();	
+	}
+	
+	@Test(priority = 75)
+	public void instaOfferScreen() throws Exception{
+		ringPayBusiness.instaLoanWhitelistLogic();	
+	}
+	
+	@Test(priority = 76)
+	public void instaTxnHistory() throws Exception{
+		ringPayBusiness.instaLoanWhitelistLogic();
+	}
+	@AfterTest
 	public void ringAppQuit() throws Exception{
 		ringPayBusiness.TearDown();
-	}*/
+	}
 }

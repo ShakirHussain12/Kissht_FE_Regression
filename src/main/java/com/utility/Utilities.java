@@ -6,6 +6,8 @@ import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.Connection;
@@ -36,6 +38,7 @@ import org.apache.poi.ss.util.NumberToTextConverter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
@@ -72,6 +75,7 @@ import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+//import io.restassured.internal.support.FileReader;
 import io.restassured.response.ValidatableResponse;
 
 public class Utilities extends ExtentReporter {
@@ -2816,11 +2820,21 @@ public class Utilities extends ExtentReporter {
 		return response;
 	}
 	
-	public static ValidatableResponse customDataPoints_policy(String cabal_count,String userRef) {
+	public static ValidatableResponse customDataPoints_policy(String cabal_count,String userRef) throws Exception {
 		Random rand = new Random();
-
-		HashMap<String,Object> cabal = new HashMap<String,Object>();
-		cabal.put("unique_cc_count_12m", "");
+		JSONParser jsonParser = new JSONParser();
+        
+        FileReader reader = new FileReader(System.getProperty("user.dir") + "//properties/customDataPoints.json");
+        Object parsedObj = jsonParser.parse(reader);
+        
+        JSONObject jsonObj = (JSONObject)parsedObj;
+        
+        jsonObj.replace("custom_data_points.policy.cabal_count", cabal_count);
+        jsonObj.replace("user_reference_number", userRef);
+        System.out.println(jsonObj.entrySet());
+        //System.out.println(jsonObj.get("cabal_count"));
+		/*HashMap<String,Object> cabal = new HashMap<String,Object>();
+		cabal.put("unique_cc_count_12m", "1");
 		cabal.put("is_close_comp", "");
 		cabal.put("is_true_comp", "");
 		cabal.put("count_unique_account_name", "");
@@ -2831,7 +2845,7 @@ public class Utilities extends ExtentReporter {
 		cabal.put("estimated_income_v3_1m", "");
 		cabal.put("device_model_hash", "");
 		cabal.put("count_loan_overdues_1", "");
-		cabal.put("cabal_linked_user_reference_numbers", "[]");
+		cabal.put("cabal_linked_user_reference_numbers", "");
 		cabal.put("cabal_count", cabal_count);
 		cabal.put("ratio_parsed_total_sms", "0.01");
 		
@@ -2841,11 +2855,11 @@ public class Utilities extends ExtentReporter {
 		HashMap<String,Object> custom = new HashMap<String,Object>();
 		custom.put("custom_data_points", policy);
 		custom.put("encrypted_name", prop.getproperty("encryptedName"));
-		custom.put("user_reference_number", userRef);
+		custom.put("user_reference_number", userRef);*/
 		
 		
 		JSONObject Myrequestbody = new JSONObject();
-		Myrequestbody.putAll(custom);
+		Myrequestbody.putAll(jsonObj);
 
 		/*Myrequestbody.put("encrypted_name", custom.get("encrypted_name"));
 		Myrequestbody.put(, req_body.get("custom_data_points.fresh_v16.is_true_comp"));

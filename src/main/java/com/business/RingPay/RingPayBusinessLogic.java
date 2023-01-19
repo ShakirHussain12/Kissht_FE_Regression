@@ -2084,7 +2084,7 @@ try {
 	}
 //=========================================Promocode transaction Set pin=============================================================
 	public void promoCodeFlowSetPin() throws Exception {
-		getDriver().resetApp();
+		//getDriver().resetApp();
 		if (verifyElementPresent(RingLoginPage.objCamPermPopUp, "Enable permissions button")) {
 			enablePermissions();
 		}
@@ -2374,7 +2374,7 @@ try {
 //=========================================Check Payment multiple Cases Start====================================================
 	public void repaymentMultipleCases() throws Exception {
 		extent.HeaderChildNode("Check payment page multiple cases");
-		getDriver().resetApp();
+		//getDriver().resetApp();
 		if (verifyElementPresent(RingLoginPage.objCamPermPopUp, "Enable permissions button")) {
 			enablePermissions();
 		}
@@ -2492,7 +2492,7 @@ try {
 	public void BankTransferModule(String accountNo, String name) throws Exception
     {
         extent.HeaderChildNode("RingPay  Transfer Flow");
-        getDriver().resetApp();
+        //getDriver().resetApp();
         if (verifyElementPresent(RingLoginPage.objCamPermPopUp, "Enable permissions button")) {
 			enablePermissions();
 		}
@@ -2625,7 +2625,7 @@ try {
 //===============================================Add Address Flow Start===============================================================
 	public void addAddressFlow() throws Exception {
         extent.HeaderChildNode("RingPay Add Address Flow");
-        getDriver().resetApp();
+        //getDriver().resetApp();
         waitTime(4000);
         if (verifyElementPresent(RingLoginPage.objCamPermPopUp, "Enable permissions button")) {
 			enablePermissions();
@@ -2738,7 +2738,7 @@ try {
 //===============================================User Scan and Pay Start===============================================================================================	
 	public void userScanAndPayTransactions() throws Exception {
 		extent.HeaderChildNode("SetPin Merchant Flow Without Location");
-		getDriver().resetApp();
+		//getDriver().resetApp();
 		onBoarding();
 		explicitWaitVisibility(HomePage.objHome, 10);
 		String sHome = getText(HomePage.objHome);
@@ -3108,7 +3108,7 @@ try {
 //=================================================Merchant Flow====================================================================
 	public void merchantFlow() throws Exception {
         extent.HeaderChildNode("RingPay App Merchant Flow");
-        getDriver().resetApp();
+        //getDriver().resetApp();
         if (verifyElementPresent(RingLoginPage.objCamPermPopUp, "Enable permissions button")) {
 			enablePermissions();
 		}
@@ -5439,7 +5439,7 @@ try {
 		enablePermissions();
 		Aclick(RingLoginPage.objLoginLink,"Sign up login link");
 		loginMobile();
-		String mobNo = "5" + RandomIntegerGenerator(9);
+		String mobNo = "7" + RandomIntegerGenerator(9);
 		mobileNoValidation2(mobNo);
 		System.out.println(mobNo);
 		enterOtp("888888");
@@ -5447,14 +5447,15 @@ try {
 		waitTime(3000);
 		
 		String userRefNo = executeQuery1("SELECT user_reference_number FROM db_tradofina.users where mobile_number='"+mobNo+"';");
-		customDataPoints_policy("100000",userRefNo);
+		waitTime(15000);
 		userDetails();
+		customDataPoints_policy(prop.getproperty("onboarding_cabal_count_greater"),userRefNo);
 		dateOfBirth("MAY","09","1994");
 		Aclick(UserRegistrationNew.objProceed, "Proceed Button");
 		waitTime(20000);
-		
 		String json_data = executeQuery1("SELECT rejection_reason FROM db_tradofina.line_application where user_reference_number='"+userRefNo+"';");
 		if(json_data.equals("Cabal Linked User")) {
+			System.out.println("yep");
 			extent.extentLoggerPass("TC_Ring_Customer_Seg_141","TC_Ring_Customer_Seg_141-To verify onboarding new user whose cabal exceeds the cut off limit during Init to CA");
 		}
 	}
