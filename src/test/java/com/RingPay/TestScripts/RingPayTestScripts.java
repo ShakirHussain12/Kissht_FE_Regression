@@ -26,7 +26,7 @@ public class RingPayTestScripts{
 		ringPayBusiness = new com.business.RingPay.RingPayBusinessLogic("ring");
 	}
 	
-	/*@Test(priority = 0)
+	@Test(priority = 0)
 	@Parameters({"SignUpBtn","permission"})
     public void  User_Playstore_Flow(String SignUpBtn, String permission) throws Exception {
 		ringPayBusiness.User_Play_Store_Flow(SignUpBtn, permission);
@@ -36,12 +36,12 @@ public class RingPayTestScripts{
 	@Parameters({"Month","Date","Year","Gender"})
 	public void userRegistrationFlow(String month, String date, String year,String gender) throws Exception {
 		ringPayBusiness.User_Registration_Flow(month,date,year,gender);
-	}*/
+	}
 	
-	/*@Test(priority = 2)
+	@Test(priority = 2)
 	public void promocodeFlow() throws Exception {
 		ringPayBusiness.promoCodeFlowModule();
-	}*/
+	}
 	
 	@Test(priority=3)
 	public void offerFlow() throws Exception {
