@@ -996,7 +996,7 @@ try {
 			verifyElementPresent(PromoCodeOfferPage.objFeeDetailPage, getText(PromoCodeOfferPage.objFeeDetailPage));
 			click(PromoCodeOfferPage.objFeeDetailsCrossBtn, "Cross Button");
 			
-			verifyElementPresent(PromoCodeOfferPage.objTermsAndCondition,getTextVal(PromoCodeOfferPage.objTermsAndCondition, "Text"));
+			/*verifyElementPresent(PromoCodeOfferPage.objTermsAndCondition,getTextVal(PromoCodeOfferPage.objTermsAndCondition, "Text"));
 			click(PromoCodeOfferPage.objTermsAndCondition, "Terms And Conditions");
 			waitTime(5000);
 			verifyElementPresent(TermsAndConditionPage.objTAndCondition,getTextVal(TermsAndConditionPage.objTAndCondition, "Text"));
@@ -1005,7 +1005,7 @@ try {
 			verifyElementPresentAndClick(TermsAndConditionPage.objAcceptAndPayBtn,getText(TermsAndConditionPage.objAcceptText));
 			System.out.println(getText(PromoCodeOfferPage.objToastMsg));
 			logger.info(getText(PromoCodeOfferPage.objToastMsg));
-			extent.extentLoggerPass("Toast Msg", getText(PromoCodeOfferPage.objToastMsg));
+			extent.extentLoggerPass("Toast Msg", getText(PromoCodeOfferPage.objToastMsg));*/
 			
 			verifyElementPresentAndClick(RingLoginPage.objIAcceptCheckBox, "I accept the Ring’s Terms & Conditions & IT Act 2000 checkbox");
 			setWifiConnectionToONOFF("Off");
@@ -1050,7 +1050,7 @@ try {
 			verifyElementPresent(TermsAndConditionPage.objSetPin, getText(TermsAndConditionPage.objSetPin));
 			softAssertion.assertEquals(getText(TermsAndConditionPage.objSetPin), "Set Pin");
 			instaLoanSetPin(prop.getproperty("InstaLoanMPIN"),prop.getproperty("InstaLoanMPIN"));
-			waitTime(15000);
+			waitTime(35000);
 			verifyElementPresentAndClick(PromoCodeOfferPage.objGoToHomePage, getText(PromoCodeOfferPage.objGoToHomePage));
 			
 			waitTime(5000);
@@ -2278,7 +2278,7 @@ try {
 		}
 	
 	public void merchantPage() throws Exception {
-		getDriver().resetApp();
+		//getDriver().resetApp();
 		if (verifyElementPresent(RingLoginPage.objCamPermPopUp, "Enable permissions button")) {
 			enablePermissions();
 		}

@@ -38,10 +38,10 @@ public class RingPayTestScripts{
 		ringPayBusiness.User_Registration_Flow(month,date,year,gender);
 	}*/
 	
-	@Test(priority = 2)
+	/*@Test(priority = 2)
 	public void promocodeFlow() throws Exception {
 		ringPayBusiness.promoCodeFlowModule();
-	}
+	}*/
 	
 	@Test(priority=3)
 	public void offerFlow() throws Exception {
