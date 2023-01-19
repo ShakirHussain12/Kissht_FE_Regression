@@ -219,7 +219,6 @@ try {
 		String errorMsg = getText(RingLoginPage.objMobError);
 		softAssertion.assertEquals(errorMsg, " Please enter a valid mobile number");
 		extent.extentLoggerPass("TC_Ring_Core_07","TC_Ring_Core_07 - To Verify User enter mobile number less than 10 digit & Click on Proceed Button");
-		getDriver().closeApp();
 		
 		clearField(RingLoginPage.objMobTextField, "Mobile Text Field");
 		logger.info("Verify mobile number with >10 digits");
@@ -1007,7 +1006,7 @@ try {
 			System.out.println(getText(PromoCodeOfferPage.objToastMsg));
 			logger.info(getText(PromoCodeOfferPage.objToastMsg));
 			extent.extentLoggerPass("Toast Msg", getText(PromoCodeOfferPage.objToastMsg));*/
-			
+			getDriver().closeApp();
 			verifyElementPresentAndClick(RingLoginPage.objIAcceptCheckBox, "I accept the Ring’s Terms & Conditions & IT Act 2000 checkbox");
 			setWifiConnectionToONOFF("Off");
 			verifyElementPresentAndClick(TermsAndConditionPage.objAcceptAndPayBtn,getText(TermsAndConditionPage.objAcceptText));
