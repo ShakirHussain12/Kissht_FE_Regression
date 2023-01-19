@@ -470,6 +470,7 @@ try {
 	        Aclick(RingLoginPage.objLocAccess,"Location Access");
 	        
 		}
+		
 		logger.info("TC_Ring_Core_59 To verify when users allow all the permission");
 		extent.extentLoggerPass("TC_Ring_Core_59", "TC_Ring_Core_59 To verify when users allow all the permission");
 		softAssertion.assertAll();
@@ -1006,7 +1007,7 @@ try {
 			System.out.println(getText(PromoCodeOfferPage.objToastMsg));
 			logger.info(getText(PromoCodeOfferPage.objToastMsg));
 			extent.extentLoggerPass("Toast Msg", getText(PromoCodeOfferPage.objToastMsg));*/
-			getDriver().closeApp();
+			//getDriver().closeApp();
 			verifyElementPresentAndClick(RingLoginPage.objIAcceptCheckBox, "I accept the Ring’s Terms & Conditions & IT Act 2000 checkbox");
 			setWifiConnectionToONOFF("Off");
 			verifyElementPresentAndClick(TermsAndConditionPage.objAcceptAndPayBtn,getText(TermsAndConditionPage.objAcceptText));
@@ -4119,7 +4120,7 @@ try {
 		String userRefNo = getText(InstaLoanPage.objUserRefNo);
 		waitTime(3000);
 		newAdminPanel_appScore(appScore);
-		customDataPoints(cc_flag,kla_flag,userRefNo);
+		customDataPoints_policy("8000","8000",userRefNo);
 		cibilDummy(cibil_score,userRefNo);
 		setPlatform("Android");
 		initDriver();
@@ -5449,7 +5450,7 @@ try {
 		String userRefNo = executeQuery1("SELECT user_reference_number FROM db_tradofina.users where mobile_number='"+mobNo+"';");
 		waitTime(15000);
 		userDetails();
-		customDataPoints_policy(prop.getproperty("onboarding_cabal_count_greater"),userRefNo);
+		customDataPoints_policy(prop.getproperty("onboarding_cabal_count_greater"),prop.getproperty("transaction_cabal_count"),userRefNo);
 		dateOfBirth("MAY","09","1994");
 		Aclick(UserRegistrationNew.objProceed, "Proceed Button");
 		waitTime(20000);
@@ -5458,6 +5459,68 @@ try {
 			System.out.println("yep");
 			extent.extentLoggerPass("TC_Ring_Customer_Seg_141","TC_Ring_Customer_Seg_141-To verify onboarding new user whose cabal exceeds the cut off limit during Init to CA");
 		}
+		getDriver().resetApp();
+	}
+	
+	public void TC_Ring_Customer_Seg_142() throws Exception{
+		extent.HeaderChildNode("TC_Ring_Customer_Seg_142");
+		
+		enablePermissions();
+		Aclick(RingLoginPage.objLoginLink,"Sign up login link");
+		loginMobile();
+		String mobNo = "7" + RandomIntegerGenerator(9);
+		mobileNoValidation2(mobNo);
+		System.out.println(mobNo);
+		enterOtp("888888");
+		readAndAccept();
+		waitTime(3000);
+		
+		String userRefNo = executeQuery1("SELECT user_reference_number FROM db_tradofina.users where mobile_number='"+mobNo+"';");
+		waitTime(15000);
+		userDetails();
+		dateOfBirth("MAY","09","1994");
+		Aclick(UserRegistrationNew.objProceed, "Proceed Button");
+		waitTime(20000);
+		addAddress("as","assa","afaa","asdafd","560102");
+		explicitWaitVisibility(PromoCodeOfferPage.objCheckBox,20);
+		customDataPoints_policy(prop.getproperty("onboarding_cabal_count_greater"),prop.getproperty("transaction_cabal_count"),userRefNo);
+		click(PromoCodeOfferPage.objCheckBox,"Terms & Conditions check box");
+		click(PromoCodeOfferPage.objAcceptOffer,"Accept offer button");
+		waitTime(4000);
+		String json_data = executeQuery1("SELECT rejection_reason FROM db_tradofina.line_application where user_reference_number='"+userRefNo+"';");
+		if(json_data.equals("Cabal Linked User")) {
+			System.out.println("yep");
+			extent.extentLoggerPass("TC_Ring_Customer_Seg_142","TC_Ring_Customer_Seg_142-To verify user whose cabal exceeds the cut off limit during CA to FA");
+		}
+		getDriver().resetApp();
 	}
 
+	public void TC_Ring_Customer_Seg_143() throws Exception{
+		extent.HeaderChildNode("TC_Ring_Customer_Seg_143");
+		
+		enablePermissions();
+		Aclick(RingLoginPage.objLoginLink,"Sign up login link");
+		loginMobile();
+		String mobNo = "7" + RandomIntegerGenerator(9);
+		mobileNoValidation2(mobNo);
+		System.out.println(mobNo);
+		enterOtp("888888");
+		readAndAccept();
+		waitTime(3000);
+		
+		String userRefNo = executeQuery1("SELECT user_reference_number FROM db_tradofina.users where mobile_number='"+mobNo+"';");
+		waitTime(15000);
+		userDetails();
+		customDataPoints_policy(prop.getproperty("onboarding_cabal_count_lesser"),prop.getproperty("transaction_cabal_count"),userRefNo);
+		dateOfBirth("MAY","09","1994");
+		Aclick(UserRegistrationNew.objProceed, "Proceed Button");
+		waitTime(20000);
+		String json_data = executeQuery1("SELECT isnull(rejection_reason) FROM db_tradofina.line_application where user_reference_number='"+userRefNo+"';");
+		if(json_data.equals("1")) {
+			System.out.println("yep");
+			extent.extentLoggerPass("TC_Ring_Customer_Seg_143","TC_Ring_Customer_Seg_143-To verify onboarding new user whose cabal is less or equal to the cut off limit");
+		}
+		getDriver().resetApp();
+	}
+	
 }

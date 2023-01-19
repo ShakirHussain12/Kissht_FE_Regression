@@ -2820,67 +2820,201 @@ public class Utilities extends ExtentReporter {
 		return response;
 	}
 	
-	public static ValidatableResponse customDataPoints_policy(String cabal_count,String userRef) throws Exception {
+	public static ValidatableResponse customDataPoints_policy(String cabal_count,String transactionCable_count, String userRef) throws Exception {
 		Random rand = new Random();
-		JSONParser jsonParser = new JSONParser();
-        
-        FileReader reader = new FileReader(System.getProperty("user.dir") + "//properties/customDataPoints.json");
-        Object parsedObj = jsonParser.parse(reader);
-        
-        JSONObject jsonObj = (JSONObject)parsedObj;
-        
-        jsonObj.replace("custom_data_points.policy.cabal_count", cabal_count);
-        jsonObj.replace("user_reference_number", userRef);
-        System.out.println(jsonObj.entrySet());
-        //System.out.println(jsonObj.get("cabal_count"));
-		/*HashMap<String,Object> cabal = new HashMap<String,Object>();
-		cabal.put("unique_cc_count_12m", "1");
-		cabal.put("is_close_comp", "");
-		cabal.put("is_true_comp", "");
-		cabal.put("count_unique_account_name", "");
-		cabal.put("message_type_unique_account_name_product_flag", "");
-		cabal.put("debit_sum_avg", "");
-		cabal.put("estimated_income_v3", "");
-		cabal.put("estimated_income_v3_3m", "");
-		cabal.put("estimated_income_v3_1m", "");
-		cabal.put("device_model_hash", "");
-		cabal.put("count_loan_overdues_1", "");
-		cabal.put("cabal_linked_user_reference_numbers", "");
-		cabal.put("cabal_count", cabal_count);
-		cabal.put("ratio_parsed_total_sms", "0.01");
-		
-		HashMap<String,Object> policy = new HashMap<String,Object>();
-		policy.put("policy", cabal);
-		
-		HashMap<String,Object> custom = new HashMap<String,Object>();
-		custom.put("custom_data_points", policy);
-		custom.put("encrypted_name", prop.getproperty("encryptedName"));
-		custom.put("user_reference_number", userRef);*/
-		
-		
-		JSONObject Myrequestbody = new JSONObject();
-		Myrequestbody.putAll(jsonObj);
+			String body="{\r\n"
+					+ "    \"encrypted_name\" : \"/MbvFhpTi7dS0IWLBp2EqA==\",\r\n"
+					+ "    \"user_reference_number\" : \""+userRef+"\",\r\n"
+					+ "    \"data_expiry_time\" : 864000,\r\n"
+					+ "    \"custom_data_points\": {\r\n"
+					+ "        \"ntc_v1\": {\r\n"
+					+ "            \"v2_last_mon_9_12_debit_amount\": \"\",\r\n"
+					+ "            \"avg_9_12_debit_amount_per_count\": \"\",\r\n"
+					+ "            \"avg_diff_credit_debit\": \"\",\r\n"
+					+ "            \"v2_last_mon_income\": \"\",\r\n"
+					+ "            \"last_mon_9_12_debit_amount\": \"\",\r\n"
+					+ "            \"last_mon_income\": \"\",\r\n"
+					+ "            \"total_debit_sum\": \"\",\r\n"
+					+ "            \"six_mon_avg_9_12_debit_amount\": \"\",\r\n"
+					+ "            \"avg_balance_3_month\": \"\",\r\n"
+					+ "            \"debit_sum_avg\": \"\",\r\n"
+					+ "            \"diff_credit_debit\": \"\",\r\n"
+					+ "            \"total_debit_count\": \"\",\r\n"
+					+ "            \"debit_unique_senders\": \"\",\r\n"
+					+ "            \"available_recent_balance\": \"\",\r\n"
+					+ "            \"available_max_balance\": \"\",\r\n"
+					+ "            \"ratio_parsed_total_sms\": 0.01,\r\n"
+					+ "            \"parsed_sms_count\": 3\r\n"
+					+ "        },\r\n"
+					+ "        \"fresh_ntc\": {\r\n"
+					+ "            \"v2_last_mon_9_12_debit_amount\": \"\",\r\n"
+					+ "            \"avg_9_12_debit_amount_per_count\": \"\",\r\n"
+					+ "            \"avg_diff_credit_debit\": \"\",\r\n"
+					+ "            \"v2_last_mon_income\": \"\",\r\n"
+					+ "            \"last_mon_9_12_debit_amount\": \"\",\r\n"
+					+ "            \"last_mon_income\": \"\",\r\n"
+					+ "            \"total_debit_sum\": \"\",\r\n"
+					+ "            \"six_mon_avg_9_12_debit_amount\": \"\",\r\n"
+					+ "            \"avg_balance_3_month\": \"\",\r\n"
+					+ "            \"debit_sum_avg\": \"\"\r\n"
+					+ "        },\r\n"
+					+ "        \"fresh_v16\": {\r\n"
+					+ "            \"avg_spend_count\": \"\",\r\n"
+					+ "            \"avg_balance_9_month\": \"\",\r\n"
+					+ "            \"total_credit_sum\": \"\",\r\n"
+					+ "            \"avg_9_12_debit_amount_per_count\": \"\",\r\n"
+					+ "            \"avg_9_12_debit_count\": \"\",\r\n"
+					+ "            \"avg_balance_3_month\": \"\",\r\n"
+					+ "            \"avg_balance_6_month\": \"\",\r\n"
+					+ "            \"avg_cashwithdrawl_6_month\": \"\",\r\n"
+					+ "            \"avg_cc_spend_count\": \"\",\r\n"
+					+ "            \"avg_diff_credit_debit\": \"\",\r\n"
+					+ "            \"credit_sum_avg\": \"\",\r\n"
+					+ "            \"kreditb_loan_overdue_before_fa\": \"\",\r\n"
+					+ "            \"kreditbee_sum_paid_loans\": \"\",\r\n"
+					+ "            \"last_mon_9_12_debit_amount\": \"\",\r\n"
+					+ "            \"last_mon_income\": \"\",\r\n"
+					+ "            \"loan_overdues_1m\": \"\",\r\n"
+					+ "            \"primary_bank_avg_balance_3_mon\": \"\",\r\n"
+					+ "            \"total_credit_count\": \"\",\r\n"
+					+ "            \"total_loan_approval_before_fa\": \"\",\r\n"
+					+ "            \"all_sum_paid_loans_last_month\": \"\",\r\n"
+					+ "            \"all_count_paid_loans_last_month\": \"\",\r\n"
+					+ "            \"avg_9_month_income\": \"\",\r\n"
+					+ "            \"avg_income\": \"\",\r\n"
+					+ "            \"count_loan_overdues_1m\": \"\",\r\n"
+					+ "            \"count_loan_overdues\": \"\",\r\n"
+					+ "            \"unique_cc_count_12m\": \"\",\r\n"
+					+ "            \"is_close_comp\": 2,\r\n"
+					+ "            \"is_true_comp\": 3,\r\n"
+					+ "            \"count_unique_account_name\": \"\",\r\n"
+					+ "            \"message_type_unique_account_name_product_flag\": \"\",\r\n"
+					+ "            \"debit_sum_avg\": \"\",\r\n"
+					+ "            \"six_month_sum_overdue_overall\": \"\",\r\n"
+					+ "            \"three_month_sum_overdue_overall\": \"\",\r\n"
+					+ "            \"twelve_month_sum_emi_overall\": \"\",\r\n"
+					+ "            \"twelve_month_sum_overdue_overall\": \"\",\r\n"
+					+ "            \"last_month_count_loans_overall\": \"\",\r\n"
+					+ "            \"last_month_max_pl\": \"\",\r\n"
+					+ "            \"last_month_sum_overdue_pl\": \"\",\r\n"
+					+ "            \"last_six_month_max_pl\": \"\",\r\n"
+					+ "            \"total_sms_count\": 814,\r\n"
+					+ "            \"count_name_match\": 0,\r\n"
+					+ "            \"device_model_hash\": \"88e50b8b269c2b2c2ff4aaa1bcc92dac\"\r\n"
+					+ "        },\r\n"
+					+ "        \"fresh_v19\": {\r\n"
+					+ "            \"three_mon_avg_9_12_debit_amount\": \"\",\r\n"
+					+ "            \"total_debit_sum\": \"\",\r\n"
+					+ "            \"avg_9_12_debit_amount_per_count\": \"\",\r\n"
+					+ "            \"avg_balance_3_month\": \"\",\r\n"
+					+ "            \"last_mon_9_12_debit_amount\": \"\",\r\n"
+					+ "            \"last_mon_income\": \"\",\r\n"
+					+ "            \"avg_cc_spend_count\": \"\"\r\n"
+					+ "        },\r\n"
+					+ "        \"policy\": {\r\n"
+					+ "            \"unique_cc_count_12m\": 1,\r\n"
+					+ "            \"is_close_comp\": \"\",\r\n"
+					+ "            \"is_true_comp\": \"\",\r\n"
+					+ "            \"count_unique_account_name\": 1,\r\n"
+					+ "            \"message_type_unique_account_name_product_flag\": 1,\r\n"
+					+ "            \"debit_sum_avg\": \"\",\r\n"
+					+ "            \"estimated_income_v3\": \"\",\r\n"
+					+ "            \"estimated_income_v3_3m\": \"\",\r\n"
+					+ "            \"estimated_income_v3_1m\": \"\",\r\n"
+					+ "            \"device_model_hash\": \"2efd0eaef6b3e8c35def960a437381a2\",\r\n"
+					+ "            \"count_loan_overdues_1\": \"\",\r\n"
+					+ "            \"cabal_linked_user_reference_numbers\": [],\r\n"
+					+ "            \"cabal_count\":"+cabal_count+",\r\n"
+					+ "            \"ratio_parsed_total_sms\": 0.01\r\n"
+					+ "        },\r\n"
+					+ "        \"repeat_v5\": {\r\n"
+					+ "            \"six_mon_avg_9_12_debit_amount\": \"\",\r\n"
+					+ "            \"three_mon_avg_9_12_debit_amount\": \"\",\r\n"
+					+ "            \"max_balance\": \"\",\r\n"
+					+ "            \"v2_last_mon_9_12_debit_amount\": \"\",\r\n"
+					+ "            \"v2_last_mon_income\": \"\",\r\n"
+					+ "            \"avg_9_12_debit_amount\": \"\",\r\n"
+					+ "            \"credit_sum_avg\": \"\",\r\n"
+					+ "            \"last_mon_income\": \"\"\r\n"
+					+ "        },\r\n"
+					+ "        \"repeat_v5_offline\": {},\r\n"
+					+ "        \"transaction_policy_variables\": {\r\n"
+					+ "            \"cabal_count\": "+transactionCable_count+"\r\n"
+					+ "        },\r\n"
+					+ "        \"FRESH-V16\": {\r\n"
+					+ "            \"avg_spend_count\": \"\",\r\n"
+					+ "            \"avg_balance_9_month\": \"\",\r\n"
+					+ "            \"total_credit_sum\": \"\",\r\n"
+					+ "            \"avg_9_12_debit_amount_per_count\": \"\",\r\n"
+					+ "            \"avg_9_12_debit_count\": \"\",\r\n"
+					+ "            \"avg_balance_3_month\": \"\",\r\n"
+					+ "            \"avg_balance_6_month\": \"\",\r\n"
+					+ "            \"avg_cashwithdrawl_6_month\": \"\",\r\n"
+					+ "            \"avg_cc_spend_count\": \"\",\r\n"
+					+ "            \"avg_diff_credit_debit\": \"\",\r\n"
+					+ "            \"credit_sum_avg\": \"\",\r\n"
+					+ "            \"kreditb_loan_overdue_before_fa\": \"\",\r\n"
+					+ "            \"kreditbee_sum_paid_loans\": \"\",\r\n"
+					+ "            \"last_mon_9_12_debit_amount\": \"\",\r\n"
+					+ "            \"last_mon_income\": \"\",\r\n"
+					+ "            \"loan_overdues_1m\": \"\",\r\n"
+					+ "            \"primary_bank_avg_balance_3_mon\": \"\",\r\n"
+					+ "            \"total_credit_count\": \"\",\r\n"
+					+ "            \"total_loan_approval_before_fa\": \"\",\r\n"
+					+ "            \"all_sum_paid_loans_last_month\": \"\",\r\n"
+					+ "            \"all_count_paid_loans_last_month\": \"\",\r\n"
+					+ "            \"avg_9_month_income\": \"\",\r\n"
+					+ "            \"avg_income\": \"\",\r\n"
+					+ "            \"count_loan_overdues_1m\": \"\",\r\n"
+					+ "            \"count_loan_overdues\": \"\",\r\n"
+					+ "            \"unique_cc_count_12m\": \"\",\r\n"
+					+ "            \"is_close_comp\": 5,\r\n"
+					+ "            \"is_true_comp\": 6,\r\n"
+					+ "            \"count_unique_account_name\": \"\",\r\n"
+					+ "            \"message_type_unique_account_name_product_flag\": \"\",\r\n"
+					+ "            \"debit_sum_avg\": \"\",\r\n"
+					+ "            \"six_month_sum_overdue_overall\": \"\",\r\n"
+					+ "            \"three_month_sum_overdue_overall\": \"\",\r\n"
+					+ "            \"twelve_month_sum_emi_overall\": \"\",\r\n"
+					+ "            \"twelve_month_sum_overdue_overall\": \"\",\r\n"
+					+ "            \"last_month_count_loans_overall\": \"\",\r\n"
+					+ "            \"last_month_max_pl\": \"\",\r\n"
+					+ "            \"last_month_sum_overdue_pl\": \"\",\r\n"
+					+ "            \"last_six_month_max_pl\": \"\",\r\n"
+					+ "            \"total_sms_count\": 814,\r\n"
+					+ "            \"count_name_match\": 0,\r\n"
+					+ "            \"device_model_hash\": \"88e50b8b269c2b2c2ff4aaa1bcc92dac\"\r\n"
+					+ "        }\r\n"
+					+ "    }\r\n"
+					+ "}";
+			
+			
+	        
+	        HashMap<String, Object> headers = new HashMap<>();
+	        headers.put("client-id", "zx2789");
 
-		/*Myrequestbody.put("encrypted_name", custom.get("encrypted_name"));
-		Myrequestbody.put(, req_body.get("custom_data_points.fresh_v16.is_true_comp"));
-		Myrequestbody.put("user_reference_number", custom.get("user_reference_number"));
-		Myrequestbody.put("custom_data_points.fresh_v16.unique_cc_count_12m", req_body.get("custom_data_points.fresh_v16.unique_cc_count_12m"));*/
-		HashMap<String, Object> headers = new HashMap<>();
-		headers.put("client-id", "zx2789");
+	 
 
-		ValidatableResponse response = RestAssured.given().baseUri(prop.getproperty("datapoints_url")).contentType(ContentType.JSON).headers(headers)
-				.body(Myrequestbody.toJSONString()).when().post().then();
+	        ValidatableResponse response = RestAssured.given().baseUri(prop.getproperty("datapoints_url")).contentType(ContentType.JSON).headers(headers)
+	                .body(body).when().post().then();
 
-		System.out.println("Request Url -->" + prop.getproperty("datapoints_url"));
-		// ExtentReporter.extentLogger("", "Request Url -->" + url);
-		System.out.println("Request :" + Myrequestbody);
-		// ExtentReporter.extentLogger("", "Request :"+Myrequestbody);
-		String Resp = response.extract().body().asString();
-		System.out.println("Response Body= " + Resp);
-		// ExtentReporter.extentLogger("", "Response Body= "+Resp);
+	 
 
-		return response;
+	        System.out.println("Request Url -->" + prop.getproperty("datapoints_url"));
+	      
+	        System.out.println("Request :" + body);
+	       
+	        String Resp = response.extract().body().asString();
+	        System.out.println("Response Body= " + Resp);
+	        
+	 
+
+	        return response;
+	
+		
+		
 	}
+	
 	// execute query from DB
 	public void executeQuery(String dbTable) throws SQLException, ClassNotFoundException {
 		// Setting the driver

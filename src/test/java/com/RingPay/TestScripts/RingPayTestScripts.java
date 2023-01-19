@@ -391,12 +391,21 @@ public class RingPayTestScripts{
 		ringPayBusiness.TC_Ring_Customer_Seg_151();
 	}*/
 	
-	/*@Test(priority=74)
+	@Test(priority=74)
 	public void ringPolicy_TC_141() throws Exception{
 		ringPayBusiness.TC_Ring_Customer_Seg_141();
-	}*/
+	}
 	
-	@Test(priority = 73)
+	@Test(priority=75)
+	public void ringPolicy_TC_142() throws Exception{
+		ringPayBusiness.TC_Ring_Customer_Seg_142();
+	}
+	
+	@Test(priority=76)
+	public void ringPolicy_TC_143() throws Exception{
+		ringPayBusiness.TC_Ring_Customer_Seg_143();
+	}
+	/*@Test(priority = 73)
 	public void instaOptionalJourney() throws Exception{
 		ringPayBusiness.instaLoanWhitelistLogic();	
 	}
@@ -414,9 +423,9 @@ public class RingPayTestScripts{
 	@Test(priority = 76)
 	public void instaTxnHistory() throws Exception{
 		ringPayBusiness.instaLoanWhitelistLogic();
-	}
-	@AfterTest
+	}*/
+	/*@AfterTest
 	public void ringAppQuit() throws Exception{
 		ringPayBusiness.TearDown();
-	}
+	}*/
 }
