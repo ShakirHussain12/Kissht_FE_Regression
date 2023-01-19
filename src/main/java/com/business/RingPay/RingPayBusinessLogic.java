@@ -219,7 +219,7 @@ try {
 		String errorMsg = getText(RingLoginPage.objMobError);
 		softAssertion.assertEquals(errorMsg, " Please enter a valid mobile number");
 		extent.extentLoggerPass("TC_Ring_Core_07","TC_Ring_Core_07 - To Verify User enter mobile number less than 10 digit & Click on Proceed Button");
-		getDriver().quit();
+		getDriver().closeApp();
 		
 		clearField(RingLoginPage.objMobTextField, "Mobile Text Field");
 		logger.info("Verify mobile number with >10 digits");
