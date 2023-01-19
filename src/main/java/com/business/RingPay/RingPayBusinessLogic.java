@@ -860,7 +860,7 @@ try {
 		verifyElementPresentAndClick(TermsAndConditionPage.objAcceptAndPayBtn,getText(TermsAndConditionPage.objAcceptText));
 			
 		instaLoanSetPin(prop.getproperty("InstaLoanMPIN"),prop.getproperty("InstaLoanMPIN"));
-		waitTime(20000);
+		waitTime(40000);
 		verifyElementPresentAndClick(PromoCodeOfferPage.objGoToHomePage, getText(PromoCodeOfferPage.objGoToHomePage));
 		waitTime(20000);
 	    verifyElementPresentAndClick(RingUserDetailPage.objCrossBtn, "Cross Button");
@@ -1242,7 +1242,7 @@ try {
 
 			logger.warn("The present age is >55 therefore the age is: " + age);
 			extent.extentLoggerWarning("age", "The present age is >55 therefore the age is: " + age);
-			waitTime(10000);
+			waitTime(25000);
 			verifyElementPresent(RingUserDetailPage.objSorryMsg, getText(RingUserDetailPage.objSorryMsg));
 			logger.info("Age Criteria Failed");
 			extent.extentLogger("Age Verification", "Age Criteria Failed");
